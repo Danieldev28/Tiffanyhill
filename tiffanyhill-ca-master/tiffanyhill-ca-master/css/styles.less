@@ -1,0 +1,329 @@
+// custom bootstrap
+@import "less/bootstrap.less";
+
+body {
+
+}
+
+.caps {
+	text-transform: uppercase;
+}
+.centered {
+	text-align: center;
+	img {
+		display: inline-block;
+	}
+}
+.clear {
+	clear: both;
+}
+a {
+	color: @brand-primary;
+	&:hover {
+		color: darken(@brand-primary, 20%);
+	}
+}
+img {
+	vertical-align: top;
+}
+p {
+	font-size: 1.15em;
+	&.normal {
+		margin-bottom: 1em;
+	}
+}
+body {
+	background: #fff;
+}
+
+.nomargin {
+	margin-bottom: 5px;
+}
+.text-center {
+	text-align: center;
+}
+
+.offset-title {
+	color: #000;
+	text-align: center;
+	width: 100%;
+	margin-top: -50px;
+}
+
+//
+// NAV / HEADER
+// --------------------------------------------------
+.navbar-brand {
+	background: transparent url(../img/logo.jpg) no-repeat center center;
+	font-size: 1px;
+	text-indent: -999999px;
+	overflow: hidden;
+
+	position: fixed;
+	width: 60px;
+	height: 77px;
+	background-size: contain;
+}
+.ie8 .navbar-brand {
+	background: none;
+
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/logo.jpg',sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/logo.jpg',sizingMethod='scale')";
+}
+.navbar-toggle {
+	margin-top: 35px;
+}
+.navbar-collapse {
+	box-shadow: none;
+	border-color: transparent;
+}
+.navbar-inverse {
+	background: #000;
+	border: none;
+	.navbar-collapse {
+		border-color: transparent;
+	}
+	.navbar-nav {
+		> li {
+			> a {
+				.caps;
+				color: #fff;
+				&:hover {
+					background: #333;
+				}
+			}
+			&.active {
+				a, a:hover {
+					color: #fff;
+					background: #333;
+				}
+			}
+		}
+	}
+}
+
+.carousel-control.left, .carousel-control.right {
+	background: none;
+}
+
+
+//
+// FOOTER
+// --------------------------------------------------
+
+
+//
+// CAROUSEL
+// --------------------------------------------------
+.slider {
+	padding-left: 0;
+	padding-right: 0;
+}
+.carousel {
+	margin-top: 77px;
+}
+
+
+.form-horizontal {
+	.control-label {
+		text-align: left;
+		font-size: 20px;
+		font-weight: normal;
+	}
+	button {
+		text-transform: uppercase;
+	}
+	.has-error {
+		 .form-control, .form-control:focus {
+		 	border: 1px solid #db4949;
+		 }
+	}
+	.help-block {
+		color: #db4949;
+		margin: 0;
+	}
+}
+
+.alert {
+	margin-top: 20px;
+	width: 100%;
+	border-radius: 2px;
+	background: #7bc977;
+	border: 1px solid #5da75a;
+	color: #fff;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	&.alert-danger {
+		background: #db4949;
+		border: 1px solid #cd3a3a;
+	}
+}
+
+//
+// TITLES
+// --------------------------------------------------
+.page-title {
+	.clearfix;
+	text-align: center;
+	margin: (@grid-gutter-width *2) 0 @grid-gutter-width 0;
+	background: #c9eaef;
+	&.loud {
+		background: #063056;
+		.title {
+			color: #fff;
+		}
+	}
+	&.no-border {
+		&:before,
+		&:after {
+			content: "";
+			position: static;
+			width: 0;
+			border-top: none;
+			border-bottom: none;
+		}
+	}
+	.title {
+		font-weight: normal;
+		font-size: 21px;
+		line-height: 21px;
+		color: #063056;
+		margin: 0;
+		padding: (@grid-gutter-width /2) 0;
+		text-transform: uppercase;
+	}
+}
+.small-title {
+	font-size: 21px;
+	line-height: 21px;
+	font-weight: normal;
+	text-align: center;
+	margin: 1em 0;
+}
+.tiny-title {
+	font-size: 16px;
+	line-height: 16px;
+	font-weight: bold;
+}
+.righty {
+	text-align: right;
+}
+.stripped {
+	margin: 0 0 1.5em 0;
+	padding: 0;
+	list-style-type: none;
+	li {
+		margin: 0;
+		padding: 0;
+	}
+}
+.border {
+	border-right: 1px solid @gray-light;
+}
+
+
+.carousel-indicators {
+	display: none;
+}
+
+
+
+//
+// TABLET STYLES
+// --------------------------------------------------
+@media (min-width: @grid-float-breakpoint) {
+
+	.slider {
+		padding-left: (@grid-gutter-width / 2);
+		padding-right: (@grid-gutter-width / 2);
+	}
+	p {
+		margin-bottom: (@grid-gutter-width * 2);
+		
+	}
+	.navbar {
+		height: 49px;
+		overflow: visible;
+		> .container {
+			.navbar-brand {
+				margin-left: (@grid-gutter-width / 2);
+			}
+		}
+	}
+	.navbar-brand {
+		width: 128px;
+		height: 165px;
+		position: static;
+		background-size: auto;
+	}
+	.navbar-inverse {
+		.navbar-collapse {
+			height: 45px !important;
+			overflow: visible;
+		}
+	}
+	.navbar-nav {
+		.pull-right;
+		> li {
+			> a {
+				height: 49px;
+			}
+		}
+	}
+	.carousel {
+		margin-top: 49px;
+	}
+
+	.carousel-indicators {
+		display: block;
+		bottom: 0;
+		right: 0;
+		left: auto;
+		width: 20%;
+		li {
+			border: none;
+			background: @brand-primary
+		}
+		.active {
+			background: #acdee6;
+		}
+	}
+
+
+}
+
+#subscription-negative{
+	color: #ff0000;
+	display: none;
+}
+
+
+
+//
+// DESKTOP STYLES
+// --------------------------------------------------
+@media (min-width: @screen-md) {
+	.container {
+		max-width: 802px;
+	}	
+}
+
+
+
+
+//
+// LARGE-DESKTOP STYLES
+// --------------------------------------------------
+@media (min-width: @screen-lg) {
+	
+}
+
+
+
+
+//
+// IE
+// --------------------------------------------------
+.ie8 {
+
+}

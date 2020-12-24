@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+	Options +FollowSymlinks
+	RewriteEngine On
+	RewriteBase /projects/tiffanyhill.ca/
+
+	RewriteCond %{HTTP_HOST} ^100\.42\.61\.214 [OR]
+	RewriteCond %{HTTP_HOST} ^www\.tiffanyhill\.com [OR]
+	RewriteCond %{HTTP_HOST} ^tiffanyhill.com [OR]
+	RewriteCond %{HTTP_HOST} ^tiffanyhill.ca
+	RewriteRule (.*) http://www.tiffanyhill.ca/$1 [R=301,L]
+
+	RewriteCond %{REQUEST_FILENAME} -s [OR]
+	RewriteCond %{REQUEST_FILENAME} -l [OR]
+	RewriteCond %{REQUEST_FILENAME} -d
+	RewriteRule ^.*$ - [NC,L]
+	RewriteRule ^(.*)$ /projects/tiffanyhill.ca/index.php?page=$1 [NC,L]
+</IfModule>

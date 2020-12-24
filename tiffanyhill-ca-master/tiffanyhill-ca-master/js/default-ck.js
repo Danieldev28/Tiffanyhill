@@ -1,0 +1,1 @@
+var goToByScroll=function(e){e.preventDefault();var t=jQuery(this).attr("href");jQuery("html,body").animate({scrollTop:jQuery(t).offset().top},"slow")};jQuery(document).ready(function(){jQuery(".navbar a").bind("mousedown",goToByScroll);$(".fancybox").fancybox()});

@@ -1,0 +1,80 @@
+/*  =============================================================================
+	Media Queries
+	Mobile first responsive design.
+    ========================================================================== */
+
+// Mobile devices
+.container {
+	width: 480px;
+}
+
+// Phone & tablet portrait & landscape
+@media screen and (max-width: 599px) {
+	.container {
+		width: 90%;
+	}
+	.contents {
+		div.actions {
+			clear: both;
+		}
+	}
+}
+
+// Phone & tablet portrait & landscape
+@media screen and (min-width: 600px) {
+	.container {
+		width: 90%;
+	}
+	nav {
+		ul {
+			display: block;
+		}
+		select {
+			display: none;
+		}
+		form {
+			display: none;
+		}
+	}
+	.contents {
+		div.actions {
+			clear: both;
+		}
+	}
+}
+
+// Smaller screen & tablets
+@media screen and (min-width: 980px) {
+	.container {
+		width: 90%;
+	}
+}
+
+// Laptops and larger screens.
+@media screen and (min-width: 1240px) {
+	.container {
+		width: 1200px;
+	}
+	.contents {
+		div.content, div.related {
+			width: 80%;
+			float: right;
+			clear: right;
+		}
+		div.actions {
+			width: 18%;
+			clear: none;
+			ul li a {
+				display: block;
+				float: none;
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+			form input {
+				.radius();
+				width: 96%;
+				padding: 2%;
+			}
+		}
+	}
+}
